@@ -5,6 +5,7 @@ import com.acmerobotics.dashboard.config.Config;
 import com.acmerobotics.dashboard.telemetry.MultipleTelemetry;
 import com.acmerobotics.roadrunner.Pose2d;
 import com.arcrobotics.ftclib.command.CommandOpMode;
+import com.arcrobotics.ftclib.command.RunCommand;
 import com.arcrobotics.ftclib.gamepad.GamepadEx;
 
 import org.firstinspires.ftc.robotcore.external.Telemetry;
@@ -33,5 +34,9 @@ public class TeleOp extends CommandOpMode {
                         () -> -driver1.getRightX(),
                         true
         ));
+
+        schedule(new RunCommand(() -> {
+            telemetry.update();
+        }));
     }
 }
