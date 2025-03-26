@@ -19,7 +19,7 @@ public class PathCommand implements Command {
     private final Set<Subsystem> requirements = new HashSet<>();
     private boolean finished = false;
 
-    public PathCommand(Action action, DriveSubsystem drive) {
+    public PathCommand(DriveSubsystem drive, Action action) {
         this.action = action;
         requirements.add(drive);
     }
